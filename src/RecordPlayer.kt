@@ -5,7 +5,7 @@ class RecordPlayer {
 
         println("Track list:")
         music.getAllSongs().forEach { song ->
-            println(" - ${song.title} by ${song.artist} (${song.playingTime} min")
+            println(" - ${song.title} by ${song.artist} (${song.playingTime} min)")
         }
         println()
 

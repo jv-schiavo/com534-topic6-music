@@ -15,13 +15,8 @@ fun main() {
     // List of Music - contains both Single and Album
     val library: List<Music> = listOf(single, album)
 
-    library.forEach { item ->
-        println("\nTotal playing time: ${item.getPlayingTime()} minutes")
-        println("Songs:")
-        item.getAllSongs().forEach { song ->
-            println(" - ${song.title} by ${song.artist}")
-        }
-    }
+    val player = RecordPlayer()
 
-
+    player.play(single)
+    player.play(album)
 }
