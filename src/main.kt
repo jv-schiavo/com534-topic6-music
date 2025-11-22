@@ -4,16 +4,24 @@ fun main() {
     val s1 = Song("Track One", "Artist A", 3.5)
     val s2 = Song("Track Two", "Artist B", 4.1)
     val s3 = Song("Track Three", "Artist A", 2.9)
+    val s4 = Song("Track Four", "Artist C", 3.5)
+
+    // create a single containing 2 songs
+    val single = Single(s1, s2)
 
     // create an album containing the songs
-    val album = Album(listOf(s1,s2,s3))
+    val album = Album(listOf(s2,s3, s4))
 
-    // Call the new method to get only songs by Artist A
-    val artistASongs = album.filterByArtist("Artist A")
+    // List of Music - contains both Single and Album
+    val library: List<Music> = listOf(single, album)
 
-    // Print the titles of the songs returned ( could be empty)
-    println("Songs by Artist A:")
-    for (song in artistASongs) {
-        println("- ${song.title}")
+    library.forEach { item ->
+        println("\nTotal playing time: ${item.getPlayingTime()} minutes")
+        println("Songs:")
+        item.getAllSongs().forEach { song ->
+            println(" - ${song.title} by ${song.artist}")
+        }
     }
+
+
 }
