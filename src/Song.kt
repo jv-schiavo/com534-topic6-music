@@ -1,1 +1,3 @@
-data class Song(val title: String, val artist: String, val playingTime: Double)
+data class Song(val title: String,
+                val artist: String,
+                val playingTime: Double)
