@@ -1,7 +1,10 @@
-class Album(val songs: List<Song>) {
-    // Return a list of songs on this album by the specified artist
-    fun filterByArtist(artist: String): List<Song> {
-        // Use filter() to keep only songs where song.artist == artist
-        return songs.filter{ song -> song.artist == artist}
+class Album(val songs: List<Song>): Music {
+    // Sum playing time of all songs on the album
+    override fun getPlayingTime(): Double {
+        return songs.sumOf { it.playingTime }
+    }
+    // All songs already stored in the album
+    override fun getAllSongs(): List<Song> {
+        return songs
     }
 }
